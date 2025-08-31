@@ -1,22 +1,33 @@
+---
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Qubit World</title>
+		<meta name="description" content="Qubit World" />
+		<meta
+			name="keywords"
+			content="quantum computing, qubits, quantum mechanics, technology, science, visualization"
+		/>
+		<meta name="author" content="Qubit World" />
+		<meta name="robots" content="index, follow" />
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<link rel="canonical" href="https://qubit.world" />
 	</head>
-	<body>
+	<body class="m-0 p-0 w-full h-full overflow-hidden font-inter">
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

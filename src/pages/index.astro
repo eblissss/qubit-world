@@ -1,11 +1,60 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<main
+		id="main-content"
+		class="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center"
+		style="background: radial-gradient(ellipse at center, #0a0a2e 0%, #000000 70%);"
+		role="main"
+	>
+		<div class="relative z-10 text-center">
+			<!-- QUBIT Title -->
+			<h1
+				class="qubit-title text-8xl md:text-9xl font-extralight mb-16 bg-gradient-to-r from-quantum-cyan via-white to-quantum-magenta bg-clip-text text-transparent animate-gradient-shift"
+				style="
+					background-size: 400% 400%;
+					text-shadow: 0 0 60px rgba(0, 255, 255, 0.4);
+					font-size: clamp(4rem, 12vw, 8rem);
+				"
+			>
+				QUBIT
+			</h1>
+
+			<!-- Central Quantum Core -->
+			<div
+				class="quantum-core relative w-40 h-40 mx-auto mb-16 hover:scale-110 hover:brightness-125 rounded-[100px] transition-all duration-500 ease-out"
+				role="img"
+				aria-label="Interactive quantum core visualization"
+			>
+				<!-- Outer rotating ring -->
+				<div
+					class="absolute inset-0 border-2 border-quantum-cyan rounded-full opacity-60"
+					style="box-shadow: 0 0 20px #00ffff, inset 0 0 20px #00ffff;"
+				>
+				</div>
+
+				<!-- Inner pulsing core -->
+				<div
+					class="absolute top-1/2 left-1/2 w-20 h-20 rounded-full bg-gradient-radial from-quantum-cyan via-quantum-magenta to-transparent animate-pulse-quantum"
+					style="box-shadow: 0 0 30px #00ffff, 0 0 60px #ff00ff, inset 0 0 20px rgba(255, 255, 255, 0.3);"
+				>
+				</div>
+			</div>
+
+			<!-- WORLD Title -->
+			<h2
+				class="world-title text-8xl md:text-9xl font-extralight bg-gradient-to-r from-quantum-magenta via-white to-quantum-yellow bg-clip-text text-transparent animate-gradient-shift"
+				style="
+					background-size: 400% 400%;
+					text-shadow: 0 0 60px rgba(255, 0, 255, 0.4);
+					font-size: clamp(4rem, 12vw, 8rem);
+					animation-delay: 0.5s;
+				"
+			>
+				WORLD
+			</h2>
+		</div>
+	</main>
 </Layout>

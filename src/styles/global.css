@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* CSS variable tokens */
+:root {
+    --font-inter: "Inter", sans-serif;
+    --color-quantum-cyan: #00ffff;
+    --color-quantum-magenta: #ff00ff;
+    --color-quantum-yellow: #ffff00;
+}
+
+/* Keyframes */
+@keyframes quantum-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes quantum-pulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Layered utilities */
+@layer utilities {
+    .animate-pulse-quantum {
+        animation: quantum-pulse 3s ease-in-out infinite;
+    }
+
+    .animate-gradient-shift {
+        animation: gradient-shift 6s ease-in-out infinite;
+    }
+
+    .font-inter {
+        font-family: var(--font-inter);
+    }
+
+    .border-quantum-cyan {
+        border-color: var(--color-quantum-cyan);
+    }
+
+    .border-quantum-magenta {
+        border-color: var(--color-quantum-magenta);
+    }
+
+    .quantum-core {
+        transition: all 0.5s ease-out;
+    }
+
+    .bg-gradient-radial {
+        background: radial-gradient(circle, var(--tw-gradient-stops));
+    }
+
+    .qubit-title,
+    .world-title {
+        transition: color 0.3s ease;
+        letter-spacing: 0.5em;
+        margin-right: -0.5em;
+    }
+
+    .qubit-title:hover,
+    .world-title:hover {
+        color: white;
+    }
+}
+
+@layer base {
+
+    html,
+    body {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .qubit-title,
+    .world-title {
+        letter-spacing: 0.3em;
+        margin-right: -0.3em;
+    }
+}
